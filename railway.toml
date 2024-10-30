@@ -1,0 +1,22 @@
+[build]
+builder = "nixpacks"
+buildCommand = "cd server && npm install"
+
+[deploy]
+startCommand = "cd server && npm start"
+healthcheckPath = "/api/health"
+healthcheckTimeout = 300
+restartPolicyType = "on_failure"
+restartPolicyMaxRetries = 3
+
+[env]
+NODE_ENV = "production"
+
+[[services]]
+internal_port = 3000
+protocol = "http"
+auto_deploy_on = ["main", "master"]
+
+[[services.ports]]
+port = 80
+handlers = ["http"]

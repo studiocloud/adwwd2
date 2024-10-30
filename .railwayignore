@@ -1,0 +1,19 @@
+# Development
+node_modules
+.git
+.env
+.env.*
+*.log
+
+# Build outputs
+dist
+build
+coverage
+
+# Editor directories
+.idea
+.vscode
+
+# System Files
+.DS_Store
+Thumbs.db
